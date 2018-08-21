@@ -1,0 +1,34 @@
+{
+    "todos": [
+        {
+            "title": "Task 1",
+            "responsible": "Mark",
+            "description": "lorem impsum",
+            "priority": "Low"
+        },
+        {
+            "title": "Task 2",
+            "responsible": "Paula",
+            "description": "loreloreloreeeee",
+            "priority": "High"
+        },
+        {
+            "title": "Task 3",
+            "responsible": "Alex",
+            "description": "oeoeoeoeoeoeoeoeeeeee",
+            "priority": "Medium"
+        },
+        {
+            "title": "Task 4",
+            "responsible": "Lola",
+            "description": "pero bueno",
+            "priority": "Low"
+        },
+        {
+            "title": "Task 5",
+            "responsible": "Pedrito",
+            "description": "lereleeee",
+            "priority": "Low"
+        }
+    ]
+}
