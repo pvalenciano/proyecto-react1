@@ -1,0 +1,15 @@
+ul{
+   
+    background-color: rebeccapurple;
+
+}
+li{
+    text-decoration: none;
+}
+nav{
+    background-color: rgba(0, 0, 0, 0.699);
+}
+h4{
+    width: 20%;
+    text-align: right;
+}
