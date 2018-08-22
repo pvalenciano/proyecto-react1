@@ -1,13 +1,40 @@
 ul{
-   
-    background-color: rebeccapurple;
+    position: absolute;
+    bottom: 0;
 
 }
+.app-name{
+    height: 100%;
+    width: 23%;
+    text-align: left;
+    
+}
+
 li{
     text-decoration: none;
+    margin-left: 6px;
+    font-size: 18px;
+    border-top-left-radius:10px; 
+    border-top-right-radius:10px; 
+    width: 90px;
+    height: 38px;
+
+}
+li:hover{
+    background-color: rgb(233, 5, 43);
+    cursor: pointer;
+}
+a:hover{
+    color: rgba(54, 54, 54, 0.658);
+
+}
+a{
+    color: white;
+
 }
 nav{
-    background-color: rgba(0, 0, 0, 0.699);
+    height: 58px;
+    background-color: rgba(0, 0, 0, 0.815);
 }
 h4{
     width: 20%;

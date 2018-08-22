@@ -9,7 +9,7 @@ import ErrorPage from './pages/error-page/ErrorPage';
 const AppRoutes = () =>
     <App>
         <Switch>
-            <Route exact path="/taskpage" component= {TaskPage} />
+            <Route exact path="/taskpage" component= {TaskPage}  />
             <Route exact path="/home" component= {Home} />
             <Route exact path="/login" component= {Login} />
             <Route exact path="/" component= {Home} />
@@ -17,5 +17,8 @@ const AppRoutes = () =>
 
 
         </Switch>
+        
     </App>;
+
+
 export default AppRoutes;

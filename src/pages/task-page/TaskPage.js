@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 // import logo from '../../';
+import logo from '../../logo.svg';
 
 import './TaskPage.css';
 
@@ -7,9 +8,7 @@ import Task from '../../components/task/Task';
 // import TodoForm from './components/form/TodoForm'
 
 import TodoForm from '../../components/form/TodoForm';
-
 import { todos } from '../../todos.json';
-import { PropTypes } from 'prop-types';
 class TaskPage extends Component {
 
 
@@ -47,7 +46,6 @@ class TaskPage extends Component {
     }
     //como ngOnInit
     render() {
-        const { body } = this.props;
 
         console.log("Antes de renderizar");
         const taskCount = this.state.todos.length
@@ -64,26 +62,26 @@ class TaskPage extends Component {
 
         return (
             <div className="TaskPage">
-               
 
                 <div className="container">
-                    <div className="row mt-4">
-                        <div className="col-md-3">
-                            {/* <img src={logo} className="App-logo" alt="logo" /> */}
-                            <TodoForm onAddTodo={this.handlerAddTodo} />
-                        </div>
-                        <div className="col-md-9">
-                            <div className="row">
-                                {todos}
+                    <div className="content">
+
+                        <div className="row ">
+                            <div className="col-md-3">
+                                <img src={logo} className="App-logo" alt="logo" />
+                                <TodoForm onAddTodo={this.handlerAddTodo} />
+                            </div>
+                            <div className="col-md-9">
+                                <div className="row">
+                                    {todos}
+                                </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
 
 
             </div>
-
 
         );
 

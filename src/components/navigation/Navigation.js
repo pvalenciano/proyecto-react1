@@ -42,13 +42,11 @@ class Navigation extends Component {
             //     </div>
             //     <h1 className="h4">React App</h1>
 
-
-
-
-
-
             // </nav >
             <nav className="navbar navbar-expand-lg" >
+                <div className="app-name">
+                    <h1 >{this.props.title}</h1>
+                </div>
                 <div className="container-fluid">
                     <ul className="navbar-nav">
                         {
@@ -61,7 +59,6 @@ class Navigation extends Component {
                         }
                     </ul>
                 </div>
-                <h4>React App</h4>
             </nav>
         );
     }

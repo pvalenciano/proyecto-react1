@@ -4,13 +4,26 @@ export default [
         url: '/'
     },
     {
-        title: 'Login',
-        url: '/login'
-    }, 
-
-    {
         title: 'Tasks',
         url: '/taskpage'
-    }
+
+    },
+    {
+        title: 'Login',
+        url: '/login'
+
+    },
+    {
+        title: 'Perfil',
+        url: '/perfil'
+
+    },
+    
+
+    
+
+    
+
+    
 
 ];

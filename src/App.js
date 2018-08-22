@@ -11,7 +11,8 @@ import TaskPage from './pages/task-page/TaskPage';
 import Content from './pages/content/Content';
 import { PropTypes } from 'prop-types';
 import items from './data/menu';
-
+//firebase
+import firebase from './config/firebase';
 class App extends Component {
 
   static propTypes = {
@@ -19,27 +20,49 @@ class App extends Component {
 
   };
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      todos
+      todos,
+      user: {}
     };
 
   }
+  componentDidMount() {
+    this.authListener();
+  }
+  authListener() {
+    firebase.auth().onAuthStateChanged((user) => {
+      console.log(user);
+      if (user) {
+        this.setState({
+          user
+        });
+        localStorage.setItem('user', user.uid);
+
+      } else {
+        this.setState({ user: null });
+        localStorage.removeItem('user');
+      }
+    });
+  }
   render() {
+
     const { children } = this.props;
-    console.log("children: "+children);
     const taskCount = this.state.todos.length
+
+
     return (
       <div className="App">
-        <Navigation title="Codejobs" items={items} taskCount={taskCount} ></Navigation>
+        {}
+        <Navigation title="Tasks app" items={items} taskCount={taskCount} ></Navigation>
         <Content body={children}></Content>
-       
       </div>
 
     );
 
   }
+
 
 
 

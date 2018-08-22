@@ -1,0 +1,61 @@
+.Login {
+    background: #304352;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #d7d2ccd3, #304352c9);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #d7d2cccb, #30435298); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 700px;
+
+}
+@media (min-width: 700px) {
+    .Login {
+        height: 1000px;
+    }
+  }
+.container{
+    color:black;
+
+}  
+.content{
+    height: 70%;
+
+}
+.screen1, .screen2{
+    background-color: rgba(255, 255, 255, 0.877);
+    border-radius: 10px;
+    height: 80%;
+    width: 40%;
+    margin: auto;
+    position: relative;
+    top:50px;
+}
+
+#register{
+    margin:0 auto;
+   
+}
+.form-container{
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.login{
+    width: 100%;
+    background-color: rgb(32, 207, 184);
+
+}
+.btn{
+    margin: auto;
+    margin-right: 35%;
+}
+.btns-acount{
+    position: absolute;
+    bottom: 40px;
+    margin: 0 auto;
+    width: 100%;
+    color: blue;
+}
+h3{
+    position: relative;
+    top:30px;
+    color:grey;
+}
