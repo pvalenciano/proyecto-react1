@@ -12,7 +12,7 @@ const AppRoutes = () =>
             <Route exact path="/taskpage" component= {TaskPage}  />
             <Route exact path="/home" component= {Home} />
             <Route exact path="/login" component= {Login} />
-            <Route exact path="/" component= {Home} />
+            <Route exact path="/" component= {Login} />
             <Route component= {ErrorPage} />
 
 

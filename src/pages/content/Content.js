@@ -6,16 +6,20 @@ class Content extends Component {
     static propTypes = {
         body: PropTypes.object.isRequired
     };
+    static propTypes = {
+        children: PropTypes.object.isRequired,
+
+    };
 
     render() {
         const { body } = this.props;
-       
 
         return (
             <div className="content" >
                 {body}
-
+                <p>{body}</p>
             </div>
+
         )
     }
 

@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import logo from '../../logo.svg';
 
 import './TaskPage.css';
+import firebase from '../../config/firebase';
 
 import Task from '../../components/task/Task';
 // import TodoForm from './components/form/TodoForm'
@@ -47,7 +48,7 @@ class TaskPage extends Component {
     //como ngOnInit
     render() {
 
-        console.log("Antes de renderizar");
+        console.log("tasks");
         const taskCount = this.state.todos.length
 
         //recorre los todos y cada evz que recorra la tarea voy a crear una interfaz

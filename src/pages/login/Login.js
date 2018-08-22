@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
 import './Login.css';
+import firebase from '../../config/firebase';
+
 class Login extends Component {
 
-    constructor() {
-        super();
-
+    constructor(props) {
+        super(props);
+        this.onLoginClicked = this.onLoginClicked.bind(this);
+        this.handleChange = this.handleChange.bind(this);
         this.state = {
             showLogin: true,
-            showRegister: false
+            showRegister: false,
+            email: '',
+            password: '',
+            passrepeat: ''
         };
     }
 
@@ -26,8 +32,20 @@ class Login extends Component {
         }
 
     }
-    onLoginClicked() {
+    handleChange(e) {
+        //observable
+        this.setState({
+            [e.target.name]: e.target.value
+        });
+    }
+    onLoginClicked(e) {
+        //evita que se refresque
+        e.preventDefault();
+        firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u) => {
 
+        }).catch((error) => {
+            console.log(error);
+        })
     }
     render() {
 
@@ -46,7 +64,7 @@ class Login extends Component {
                                         <input value={this.state.pass} onChange={this.handleChange} type="password" name="password" className="form-control" id="inputPassword" placeholder="password" />
                                     </div>
                                     <div className="login">
-                                        <button id="login" className="btn" type="submit" onClick={this.onLoginClicked}><i class="fas fa-sign-in-alt"></i></button>
+                                        <button id="login" className="btn" type="submit" onClick={this.onLoginClicked}><i className="fas fa-sign-in-alt"></i></button>
                                     </div>
 
 
@@ -70,8 +88,11 @@ class Login extends Component {
                                     <div className="form-group">
                                         <input value={this.state.pass} onChange={this.handleChange} type="password" name="password" className="form-control" id="inputPassword" placeholder="password" />
                                     </div>
+                                    <div className="form-group">
+                                        <input value={this.state.passrepeat} type="password" name="passwordrepeat" className="form-control" id="inputPasswordRepeat" placeholder="Repeat Password" />
+                                    </div>
                                     <div className="login">
-                                        <button id="login" className="btn" onClick={this.onLoginClicked}><i class="fas fa-sign-in-alt"></i></button>
+                                        <button id="register" className="btn" onClick={this.onLoginClicked}><i className="fas fa-check-circle"></i></button>
                                     </div>
 
 
