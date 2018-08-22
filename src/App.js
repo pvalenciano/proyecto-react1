@@ -19,7 +19,10 @@ class App extends Component {
   //   children: PropTypes.object.isRequired,
 
   // };
+  static propTypes = {
+    children: PropTypes.object.isRequired,
 
+  };
   constructor(props) {
     super(props);
     this.state = {
@@ -54,10 +57,10 @@ class App extends Component {
 
     return (
       <div className="App">
-       
-        
+
+
         {/* ?=true */}
-        {this.state.user ? (<Home />) : (<Login />)}
+        {this.state.user ? (<Home body={body}></Home>) : (<Login />)}
 
       </div>
 

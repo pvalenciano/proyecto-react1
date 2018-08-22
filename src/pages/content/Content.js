@@ -13,7 +13,6 @@ class Content extends Component {
         return (
             <div className="content" >
                 {body}
-                <p>hola</p>
             </div>
 
         )
