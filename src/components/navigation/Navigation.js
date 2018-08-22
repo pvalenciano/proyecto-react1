@@ -10,6 +10,7 @@ class Navigation extends Component {
         title: PropTypes.string.isRequired,
         items: PropTypes.array.isRequired
     };
+
     constructor() {
         super();
 

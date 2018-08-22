@@ -57,7 +57,7 @@ class App extends Component {
        
         
         {/* ?=true */}
-        {this.state.user ? (<Home />) : (<Login />)}
+        {this.state.user ? (<TaskPage />) : (<Login />)}
 
       </div>
 

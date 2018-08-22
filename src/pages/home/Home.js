@@ -10,6 +10,7 @@ import items from '../../data/menu';
 //firebase
 import firebase from '../../config/firebase';
 import TaskPage from '../../pages/task-page/TaskPage';
+import AppRoutes from '../../routes';
 
 class Home extends Component {
     static propTypes = {
@@ -31,7 +32,7 @@ class Home extends Component {
                 <Navigation title="Tasks app" items={items} taskCount={taskCount} ></Navigation>
                 <img src={logo} className="App-logo" alt="logo" />
 
-                <Content body={children}></Content>
+                {/* <Content body={children}></Content> */}
 
                 <p>Home!</p>
             </div>

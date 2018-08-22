@@ -6,11 +6,7 @@ class Content extends Component {
     static propTypes = {
         body: PropTypes.object.isRequired
     };
-    static propTypes = {
-        children: PropTypes.object.isRequired,
-
-    };
-
+  
     render() {
         const { body } = this.props;
 
