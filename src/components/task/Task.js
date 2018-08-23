@@ -5,13 +5,14 @@ class Task extends Component {
 
     render() {
         return (
-            <div className="col-md-4" key={this.props.i}>
+            <div className="col-md-4" >
                 <div className="card mt-4">
-                    <div style={this.props.color} className="card-header">
+                    <div className="card-header">
                         <button onClick={this.props.onDeleteTodo}>
                             <i className="fas fa-times"></i>
                         </button>
-                        <h3> {this.props.todoTitle}</h3>
+                        <h3>{this.props.todoTitle}</h3>
+
                         <span className="badge badge-pill badge-danger ml-2">
                             {this.props.todoPriority}
                         </span>

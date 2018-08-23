@@ -5,3 +5,9 @@
 button{
     float: right;
 }
+p{
+    color:black;
+}
+.card-header{
+    background-color: green;
+}

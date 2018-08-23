@@ -1,25 +1,25 @@
 export default [
     {
         title: 'Home',
-        url: '/'
+        url: '/home'
     },
     {
         title: 'Tasks',
         url: '/taskpage'
 
     },
-    {
-        title: 'Login',
-        url: '/login'
-
-    },
+  
     {
         title: 'Perfil',
         url: '/perfil'
 
     },
     
+  // {
+    //     title: 'Login',
+    //     url: '/login'
 
+    // },
     
 
     

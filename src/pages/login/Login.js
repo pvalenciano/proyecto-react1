@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Login.css';
 import firebase from '../../config/firebase';
+import TaskPage from '../task-page/TaskPage';
 
 class Login extends Component {
 
@@ -42,7 +43,6 @@ class Login extends Component {
         //evita que se refresque
         e.preventDefault();
         firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u) => {
-
         }).catch((error) => {
             console.log(error);
         })
@@ -50,6 +50,7 @@ class Login extends Component {
     render() {
 
         return (
+
             <div className="Login">
                 <div className="container">
                     <div className="content">
@@ -109,8 +110,9 @@ class Login extends Component {
                 </div>
             </div>
         )
-
     }
+
+
 
 
 }

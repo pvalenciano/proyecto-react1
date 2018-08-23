@@ -15,20 +15,32 @@ import TaskPage from './pages/task-page/TaskPage';
 
 class App extends Component {
 
-  // static propTypes = {
-  //   children: PropTypes.object.isRequired,
 
-  // };
   static propTypes = {
-    children: PropTypes.object.isRequired,
+    // children: PropTypes.object.isRequired,
 
   };
   constructor(props) {
     super(props);
     this.state = {
-      // todos,
-      user: {}
+      todos,
+      user: {},
     };
+
+  }
+  screenOperations() {
+    if (this.state.showLogin) {
+      this.setState({
+        showLogin: false,
+        showRegister: true
+      })
+    } else {
+      alert("Sure?");
+      this.setState({
+        showLogin: true,
+        showRegister: false
+      })
+    }
 
   }
   componentDidMount() {
@@ -39,7 +51,8 @@ class App extends Component {
       console.log(user);
       if (user) {
         this.setState({
-          user
+          user,
+          isLoggedIn: true
         });
         localStorage.setItem('user', user.uid);
 
@@ -51,17 +64,14 @@ class App extends Component {
   }
   render() {
 
-    // const { children } = this.props;
+    const { children } = this.props;
+    const { todos } = this.state;
     // const taskCount = this.state.todos.length
-
-
     return (
+
       <div className="App">
-
-
-        {/* ?=true */}
-        {this.state.user ? (<Home body={body}></Home>) : (<Login />)}
-
+        {this.state.isLoggedIn ?
+          (<Content body={children}></Content>) : (<Login ></Login>)}
       </div>
 
     );

@@ -16,6 +16,9 @@ class Navigation extends Component {
 
     }
 
+    exitApp(){
+        console.log("Exit..");
+    }
 
     render() {
 
@@ -41,7 +44,7 @@ class Navigation extends Component {
             <div className="Navigation">
                 <nav className="navbar navbar-expand-lg" >
                     <div className="app-name">
-                        <h1 >{this.props.title}</h1>
+                        <h1>{this.props.title}</h1>
                     </div>
                     <div className="container-fluid">
                         <ul className="navbar-nav">
@@ -53,6 +56,9 @@ class Navigation extends Component {
                                         </li>
                                 )
                             }
+                            <li>
+                                <a onClick={this.exitApp}/>Exit
+                            </li>
                         </ul>
                     </div>
                 </nav>

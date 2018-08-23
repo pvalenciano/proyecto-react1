@@ -52,7 +52,6 @@ class TaskPage extends Component {
         const taskCount = this.state.todos.length
 
         //recorre los todos y cada evz que recorra la tarea voy a crear una interfaz
-
         const todos = this.state.todos.map((todo, i) => {
 
             return (<Task i={i} onDeleteTodo={this.handlerDeleteTodo.bind(this, i)} todoTitle={todo.title} todoPriority={todo.todoPriority}
@@ -63,7 +62,6 @@ class TaskPage extends Component {
 
         return (
             <div className="TaskPage">
-
                 <div className="container">
                     <div className="content">
 
