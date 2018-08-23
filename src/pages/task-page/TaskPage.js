@@ -40,7 +40,7 @@ class TaskPage extends Component {
                 todos: this.state.todos.filter((e, i) => {
                     return i !== index
                 })
-            })
+            });
         }
 
 
@@ -49,14 +49,14 @@ class TaskPage extends Component {
     render() {
 
         console.log("tasks");
-        const taskCount = this.state.todos.length
+        const taskCount = this.state.todos.length;
 
         //recorre los todos y cada evz que recorra la tarea voy a crear una interfaz
         const todos = this.state.todos.map((todo, i) => {
 
-            return (<Task i={i} onDeleteTodo={this.handlerDeleteTodo.bind(this, i)} todoTitle={todo.title} todoPriority={todo.todoPriority}
+            return (<Task i={i} onDeleteTodo={this.handlerDeleteTodo.bind(this, i)} todoTitle={todo.title} todoPriority={todo.priority}
                 todoResponsible={todo.responsible} todoDescription={todo.description}></Task>)
-        })
+        });
 
 
 
