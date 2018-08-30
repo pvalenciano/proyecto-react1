@@ -12,11 +12,19 @@
   }
 .container{
     color:black;
-
+    
 }  
 .content{
     height: 70%;
 
+}
+.inter-container{
+    height: 100%;
+}
+
+.btns-netw{
+    background-color: rgb(255, 251, 0);
+    width: 100%;
 }
 .screen1, .screen2{
     background-color: rgba(255, 255, 255, 0.877);
@@ -36,14 +44,14 @@
     width: 60%;
     margin: 0 auto;
     margin-top: 100px;
+
 }
 
 .login{
     width: 100%;
-    background-color: rgb(32, 207, 184);
 
 }
-.btn{
+#btn-login{
     margin: auto;
     margin-right: 40%;
 }
@@ -58,4 +66,21 @@ h3{
     position: relative;
     top:30px;
     color:grey;
+}
+.row{
+    margin: auto;
+    width: 80%;
+
+}
+#btn-facebook{
+    color:white;
+    background-color: rgb(0, 81, 255);
+}
+#btn-google{
+    color:white;
+    background-color: rgb(248, 77, 77);
+}
+#btn-twitter{
+    color: white;
+    background-color: rgb(0, 195, 255);
 }

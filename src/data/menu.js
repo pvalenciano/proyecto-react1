@@ -9,21 +9,12 @@ export default [
 
     },
   
-    {
-        title: 'Perfil',
-        url: '/perfil'
-
-    },
     
   // {
     //     title: 'Login',
     //     url: '/login'
 
     // },
-    
-
-    
-
     
 
 ];

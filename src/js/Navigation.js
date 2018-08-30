@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './Navigation.css';
+import '../styles/Navigation.css';
 import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
-import Content from '../../pages/content/Content';
+import firebase from '../config/firebase';
 
 class Navigation extends Component {
 
@@ -11,18 +11,20 @@ class Navigation extends Component {
         items: PropTypes.array.isRequired
     };
 
-    constructor() {
-        super();
-
+    constructor(props) {
+        super(props);
     }
 
-    exitApp(){
+    exitApp() {
         console.log("Exit..");
     }
 
     render() {
 
         const { title, items } = this.props;
+        console.log("eheo: ", this.props.userData);
+        // const { }
+
         return (
 
             // <nav className = "navbar navbar-expand-lg" >
@@ -41,25 +43,42 @@ class Navigation extends Component {
             //     <h1 className="h4">React App</h1>
 
             // </nav >
+
             <div className="Navigation">
                 <nav className="navbar navbar-expand-lg" >
                     <div className="app-name">
                         <h1>{this.props.title}</h1>
                     </div>
                     <div className="container-fluid">
-                        <ul className="navbar-nav">
+
+                        <ul id="ulnav" className="navbar-nav">
                             {
                                 items && items.map(
                                     (item, key) =>
                                         <li key={key}>
-                                            <Link to={item.url}>{item.title}</Link>
+                                            {key == "1" ?
+                                                (<p>  <Link to={item.url}>{item.title}</Link>  <span id="badgeTasks" className="badge badge-pill badge-light ml-2">{this.props.taskCount}</span></p>) : <Link to={item.url}>{item.title}</Link>}
+
                                         </li>
                                 )
                             }
+
+
+
+                        </ul>
+                        <ul id="uldata" className="navbar-nav">
+                            <li className="userData">
+                                <Link to="/perfil">{this.props.userData.name}</Link>
+                            </li>
                             <li>
-                                <a onClick={this.exitApp}/>Exit
+                                <a href="/" onClick={this.props.logoutbtn}>Exit</a>
+                            </li>
+                            <li className="img-rounded">
+                                <img src={this.props.userData.photo} alt={this.props.userData.photo} className="rounded-circle" />
+
                             </li>
                         </ul>
+
                     </div>
                 </nav>
             </div>

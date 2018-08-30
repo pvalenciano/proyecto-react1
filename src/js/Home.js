@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './Home.css';
-import logo from '../../logo.svg';
+import '../styles/Home.css';
+import logo from '../logo.svg';
 
 
 
@@ -11,6 +11,7 @@ class Home extends Component {
 
 
         return (
+
             <div className="Home">
                 <img src={logo} className="App-logo" alt="logo" />
                 <div className="container">
