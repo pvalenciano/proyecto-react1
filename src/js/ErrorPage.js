@@ -7,7 +7,7 @@ class ErrorPage extends Component {
     
         return (
             <div className="ErrorPage">
-                <h>404! file not found</h>
+                <h2>404! file not found</h2>
 
             </div>
         )

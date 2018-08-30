@@ -1,45 +1,101 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-import Navigation from './components/navigation/Navigation';
-import Task from './components/task/Task';
-import TodoForm from './components/form/TodoForm'
 
 import { todos } from './todos.json';
-import TaskPage from './pages/task-page/TaskPage';
-import Content from './pages/content/Content';
+import Content from './js/Content';
 import { PropTypes } from 'prop-types';
 import items from './data/menu';
+//firebase
+import firebase from './config/firebase';
+import Login from './js/Login';
+import Home from './js/Home';
+import TaskPage from './js/TaskPage';
 
 class App extends Component {
 
+
   static propTypes = {
-    children: PropTypes.object.isRequired,
+    // children: PropTypes.object.isRequired,
 
   };
-
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      todos
+      todos,
+      user: {},
+      userData : {
+        email: '',
+        name: '',
+        photo:''
+      }
     };
 
   }
+  screenOperations() {
+    if (this.state.showLogin) {
+      this.setState({
+        showLogin: false,
+        showRegister: true
+      })
+    } else {
+      alert("Sure?");
+      this.setState({
+        showLogin: true,
+        showRegister: false
+      })
+    }
+
+  }
+  componentDidMount() {
+    this.authListener();
+  }
+  authListener() {
+    firebase.auth().onAuthStateChanged((user) => {
+      console.log(user);
+      if (user) {
+        this.setState({
+          user,
+          isLoggedIn: true
+        });
+        localStorage.setItem('user', user.uid);
+        // console.log("user name: ", user.displayName);
+        // console.log("user email: ", user.email);
+
+      } else {
+        this.setState({ user: null });
+        localStorage.removeItem('user');
+      }
+    });
+  }
   render() {
+
     const { children } = this.props;
-    console.log("children: "+children);
-    const taskCount = this.state.todos.length
+    const { todos } = this.state;
+    const taskCount = this.state.todos.length;
+
+    if (this.state.isLoggedIn) {
+       this.state.userData = {
+        email: this.state.user.email,
+        name: this.state.user.displayName,
+        photo: this.state.user.photoURL
+      }
+    }
+
+
+    // const userEmail = this.state.user.email ;
+    // const userName = this.state.user.displayName;
     return (
+
       <div className="App">
-        <Navigation title="Codejobs" items={items} taskCount={taskCount} ></Navigation>
-        <Content body={children}></Content>
-       
+        {this.state.isLoggedIn ?
+          (<Content userData={this.state.userData} body={children} tasks={taskCount}></Content>) : (<Login ></Login>)}
       </div>
 
     );
 
   }
+
 
 
 

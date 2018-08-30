@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 // import logo from '../../';
+import logo from '../logo.svg';
 
-import './TaskPage.css';
+import '../styles/TaskPage.css';
+import firebase from '../config/firebase';
 
-import Task from '../../components/task/Task';
-// import TodoForm from './components/form/TodoForm'
+import Task from './Task';
 
-import TodoForm from '../../components/form/TodoForm';
-
-import { todos } from '../../todos.json';
-import { PropTypes } from 'prop-types';
+import TodoForm from './TodoForm';
+import { todos } from '../todos.json';
 class TaskPage extends Component {
 
 
@@ -40,50 +39,47 @@ class TaskPage extends Component {
                 todos: this.state.todos.filter((e, i) => {
                     return i !== index
                 })
-            })
+            });
         }
 
 
     }
     //como ngOnInit
     render() {
-        const { body } = this.props;
 
-        console.log("Antes de renderizar");
-        const taskCount = this.state.todos.length
+        console.log("tasks");
+        const taskCount = this.state.todos.length;
 
         //recorre los todos y cada evz que recorra la tarea voy a crear una interfaz
-
         const todos = this.state.todos.map((todo, i) => {
 
-            return (<Task i={i} onDeleteTodo={this.handlerDeleteTodo.bind(this, i)} todoTitle={todo.title} todoPriority={todo.todoPriority}
+            return (<Task i={i} onDeleteTodo={this.handlerDeleteTodo.bind(this, i)} todoTitle={todo.title} todoPriority={todo.priority}
                 todoResponsible={todo.responsible} todoDescription={todo.description}></Task>)
-        })
+        });
 
 
 
         return (
             <div className="TaskPage">
-               
-
                 <div className="container">
-                    <div className="row mt-4">
-                        <div className="col-md-3">
-                            {/* <img src={logo} className="App-logo" alt="logo" /> */}
-                            <TodoForm onAddTodo={this.handlerAddTodo} />
-                        </div>
-                        <div className="col-md-9">
-                            <div className="row">
-                                {todos}
+                    <div className="content">
+
+                        <div className="row ">
+                            <div className="col-md-3">
+                                <img src={logo} className="App-logo" alt="logo" />
+                                <TodoForm onAddTodo={this.handlerAddTodo} />
+                            </div>
+                            <div className="col-md-9">
+                                <div className="row">
+                                    {todos}
+                                </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
 
 
             </div>
-
 
         );
 

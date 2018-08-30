@@ -1,0 +1,79 @@
+@media (max-width: 1000px) {
+    ul#ulnav{
+        position: relative;
+        top:200px;
+    }
+  }
+ul#ulnav{
+    position: absolute;
+    bottom: 0;
+}
+ul#uldata{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 20%;
+
+}
+ul#ulphoto{
+    position: absolute;
+    right: 16px;
+    
+
+}
+.app-name{
+    height: 100%;
+    width: 23%;
+    text-align: left;
+    
+}
+.navbar{
+    width: 100%;
+}
+
+.userData{
+    background-color: rgba(170, 170, 170, 0.623);
+    width: 60%;
+}
+
+li{
+    text-decoration: none;
+    margin-left: 6px;
+    font-size: 18px;
+    border-top-left-radius:10px; 
+    border-top-right-radius:10px; 
+    width: 100px;
+    height: 38px;
+
+}
+#badgeTasks{
+    background-color: rgb(255, 255, 255);
+   
+}
+
+li:hover{
+    background-color: rgb(233, 5, 43);
+    cursor: pointer;
+}
+
+a:hover{
+    color: rgba(54, 54, 54, 0.658);
+
+}
+a{
+    color: white;
+
+}
+nav{
+    height: 58px;
+    background-color: rgba(0, 0, 0, 0.815);
+}
+h4{
+    width: 20%;
+    text-align: right;
+}
+.img-rounded{
+   position: relative;
+   bottom:10px;
+   
+}

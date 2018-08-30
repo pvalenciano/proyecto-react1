@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Task.css';
+import '../styles/Task.css';
 class Task extends Component {
 
 
@@ -9,16 +9,16 @@ class Task extends Component {
                 <div className="card mt-4">
                     <div style={this.props.color} className="card-header">
                         <button onClick={this.props.onDeleteTodo}>
-                            <i class="fas fa-times"></i>
+                            <i className="fas fa-times"></i>
                         </button>
-                        <h3> {this.props.todoTitle}</h3>
+                        <h2> {this.props.todoTitle}</h2>
                         <span className="badge badge-pill badge-danger ml-2">
                             {this.props.todoPriority}
                         </span>
                     </div>
                     <div className="card-body">
                         <p>{this.props.todoDescription}</p>
-                        <p><mark>{this.props.responsible}</mark></p>
+                        <p><mark>{this.props.todoResponsible}</mark></p>
                     </div>
 
                 </div>
