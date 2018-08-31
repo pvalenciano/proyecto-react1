@@ -7,19 +7,21 @@ import Home from './js/Home';
 import Login from './js/Login';
 import ErrorPage from './js/ErrorPage';
 import Perfil from './js/Perfil';
+import Notes from './js/Notes';
 const AppRoutes = () =>
     <App>
         <Switch>
-            <Route exact path="/taskpage" component= {TaskPage}  />
-            <Route exact path="/home" component= {Home} />
-            <Route exact path="/perfil" component= {Perfil} />
+            <Route exact path="/taskpage" component={TaskPage} />
+            <Route exact path="/notes" component={Notes} />
+            <Route exact path="/home" component={Home} />
+            <Route exact path="/perfil" component={Perfil} />
             {/* <Route exact path="/login" component= {Login} /> */}
-            <Route exact path="/" component= {Home} />
-            <Route component= {ErrorPage} />
+            <Route exact path="/" component={Home} />
+            <Route component={ErrorPage} />
 
 
         </Switch>
-        
+
     </App>;
 
 

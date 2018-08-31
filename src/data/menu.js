@@ -8,13 +8,13 @@ export default [
         url: '/taskpage'
 
     },
-  
-    
-  // {
-    //     title: 'Login',
-    //     url: '/login'
 
-    // },
-    
+
+    {
+        title: 'Notas',
+        url: '/notes'
+
+    },
+
 
 ];

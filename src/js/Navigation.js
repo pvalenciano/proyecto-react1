@@ -71,7 +71,7 @@ class Navigation extends Component {
                                 <Link to="/perfil">{this.props.userData.name}</Link>
                             </li>
                             <li>
-                                <a href="/" onClick={this.props.logoutbtn}>Exit</a>
+                                <a href="/" onClick={this.props.logoutbtn}><i className="fas fa-sign-out-alt"></i></a>
                             </li>
                             <li className="img-rounded">
                                 <img src={this.props.userData.photo} alt={this.props.userData.photo} className="rounded-circle" />
