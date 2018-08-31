@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-
-
 import { todos } from './todos.json';
 import Content from './js/Content';
 import { PropTypes } from 'prop-types';
@@ -32,6 +30,8 @@ class App extends Component {
     };
 
   }
+
+  
   screenOperations() {
     if (this.state.showLogin) {
       this.setState({
@@ -89,7 +89,7 @@ class App extends Component {
 
       <div className="App">
         {this.state.isLoggedIn ?
-          (<Content userData={this.state.userData} body={children} tasks={taskCount}></Content>) : (<Login ></Login>)}
+          (<Content userData={this.state.userData} body={children} tasks={taskCount}></Content>) : (<Login></Login>)}
       </div>
 
     );

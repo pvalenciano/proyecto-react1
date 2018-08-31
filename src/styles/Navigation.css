@@ -57,7 +57,7 @@ li:hover{
 }
 
 a:hover{
-    color: rgba(54, 54, 54, 0.658);
+    color: white;
 
 }
 a{
@@ -72,8 +72,11 @@ h4{
     width: 20%;
     text-align: right;
 }
-.img-rounded{
+.img-rounded {
    position: relative;
    bottom:10px;
    
+}
+div #imgId:hover{
+    background-color: transparent;
 }

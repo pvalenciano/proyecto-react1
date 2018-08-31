@@ -62,20 +62,17 @@ class Navigation extends Component {
                                         </li>
                                 )
                             }
-
-
-
                         </ul>
                         <ul id="uldata" className="navbar-nav">
                             <li className="userData">
                                 <Link to="/perfil">{this.props.userData.name}</Link>
                             </li>
-                            <li>
-                                <a href="/" onClick={this.props.logoutbtn}>Exit</a>
-                            </li>
-                            <li className="img-rounded">
+                           
+                            <li id="imgId" className="img-rounded">
                                 <img src={this.props.userData.photo} alt={this.props.userData.photo} className="rounded-circle" />
-
+                            </li>
+                            <li>
+                                <a href="/" onClick={this.props.logoutbtn}><i className="fas fa-sign-out-alt"></i></a>
                             </li>
                         </ul>
 
