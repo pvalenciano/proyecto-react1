@@ -12,6 +12,9 @@ class Note extends Component {
     }
     handleRemoveNote(id) {
         this.props.removeNote(id);
+        // if(){
+
+        // }
     }
     render() {
         return (

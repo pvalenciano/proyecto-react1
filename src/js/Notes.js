@@ -13,7 +13,7 @@ class Notes extends Component {
 
         this.addNote = this.addNote.bind(this);
         this.removeNote = this.removeNote.bind(this);
-        
+        this.borrar = false;
         this.datab = firebase.database();
         this.database = this.datab.ref().child('notes');
 
@@ -22,6 +22,22 @@ class Notes extends Component {
                 // { id: 1, noteContent: 'Note 1' },
                 // { id: 2, noteContent: 'Note2' }
             ],
+        }
+        // {classSuccess: "alert alert-success", strong: "bien"},
+        //     {classDanger: "alert alert-danger", strong: "mal"}
+        // this.booleanAlert = {
+        //     deleteBool: false,
+        //     noDeleteBool: true
+        // }
+        this.decision = false;
+        this.classes = {
+            classDanger: {
+                classN: "alert alert-danger",
+                strong: "Borrar, ",
+                info: "¿Seguro que quieres borrar?",
+                deleteBool: false,
+            }
+
         }
     }
     componentWillMount() {
@@ -68,6 +84,14 @@ class Notes extends Component {
             noteContent: note
         });
     }
+    yesButtonClicked() {
+        this.decision = true;
+
+    }
+    noButtonClicked() {
+        this.decision = false;
+
+    }
     removeNote(noteId) {
         console.log("from the parent: " + noteId);
         this.database.child(noteId).remove();
@@ -75,9 +99,11 @@ class Notes extends Component {
 
     render() {
         return (
-            <div className="Notes">
+            <div className="Notes" >
 
+                
                 <div className="notesBody">
+
                     {this.state.notes.map((note) => {
                         return (
                             <Note noteContent={note.noteContent}
