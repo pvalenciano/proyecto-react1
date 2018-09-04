@@ -4,7 +4,6 @@ import '../styles/Content.css';
 import items from '../data/menu';
 import Navigation from './Navigation';
 import firebase from '../config/firebase';
-import Perfil from '../js/Perfil';
 import 'firebase/database';
 class Content extends Component {
 

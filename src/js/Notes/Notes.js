@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import '../styles/Note.css';
 import PropTypes from 'prop-types';
 import Note from './Note';
 import NoteForm from './NoteForm';
-import '../styles/Notes.css';
-import firebase from '../config/firebase';
+import '../../styles/Notes.css';
+import firebase from '../../config/firebase';
 import 'firebase/database';
 
 class Notes extends Component {

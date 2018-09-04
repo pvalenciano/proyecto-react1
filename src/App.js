@@ -6,32 +6,28 @@ import { PropTypes } from 'prop-types';
 import items from './data/menu';
 //firebase
 import firebase from './config/firebase';
-import Login from './js/Login';
+import Login from './js/User/Login';
 import Home from './js/Home';
-import TaskPage from './js/TaskPage';
+import Facebook from './config/Facebook';
 
 class App extends Component {
 
 
-  static propTypes = {
-    // children: PropTypes.object.isRequired,
-
-  };
   constructor(props) {
     super(props);
     this.state = {
       todos,
       user: {},
-      userData : {
+      userData: {
         email: '',
         name: '',
-        photo:''
+        photo: ''
       }
     };
 
   }
 
-  
+
   screenOperations() {
     if (this.state.showLogin) {
       this.setState({
@@ -75,7 +71,7 @@ class App extends Component {
     const taskCount = this.state.todos.length;
 
     if (this.state.isLoggedIn) {
-       this.state.userData = {
+      this.state.userData = {
         email: this.state.user.email,
         name: this.state.user.displayName,
         photo: this.state.user.photoURL

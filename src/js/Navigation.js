@@ -13,16 +13,34 @@ class Navigation extends Component {
 
     constructor(props) {
         super(props);
+
     }
 
     exitApp() {
         console.log("Exit..");
     }
 
+    componentWillMount() {
+        let notes
+        firebase.database().ref('notes').once('value', (data) => {
+            console.log("notas", data.toJSON());
+            notes = data.toJSON();
+
+
+
+        });
+        let element;
+
+        for (let x in notes) {
+            element = x;
+            console.log("element: ", x);
+        }
+
+
+    }
     render() {
 
         const { title, items } = this.props;
-        console.log("eheo: ", this.props.userData);
         // const { }
 
         return (
@@ -57,7 +75,7 @@ class Navigation extends Component {
                                     (item, key) =>
                                         <li key={key}>
                                             {key == "1" ?
-                                                (<p>  <Link to={item.url}>{item.title}</Link>  <span id="badgeTasks" className="badge badge-pill badge-light ml-2">{this.props.taskCount}</span></p>) : <Link to={item.url}>{item.title}</Link>}
+                                                (<p>  <Link to={item.url}>{item.title}</Link>  <span id="badgeTasks" className="badge badge-pill badge-light ml-2">{this.x}</span></p>) : <Link to={item.url}>{item.title}</Link>}
 
                                         </li>
                                 )
@@ -65,9 +83,9 @@ class Navigation extends Component {
                         </ul>
                         <ul id="uldata" className="navbar-nav">
                             <li className="userData">
-                                <Link to="/perfil">{this.props.userData.name}</Link>
+                                <Link to="/perfil">{this.props.userData.email}</Link>
                             </li>
-                           
+
                             <li id="imgId" className="img-rounded">
                                 <img src={this.props.userData.photo} alt={this.props.userData.photo} className="rounded-circle" />
                             </li>

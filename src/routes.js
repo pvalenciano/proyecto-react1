@@ -2,12 +2,11 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import App from './App'
-import TaskPage from './js/TaskPage';
+import TaskPage from './js/Tasks/TaskPage';
 import Home from './js/Home';
-import Login from './js/Login';
 import ErrorPage from './js/ErrorPage';
-import Perfil from './js/Perfil';
-import Notes from './js/Notes';
+import Perfil from './js/User/Perfil';
+import Notes from './js/Notes/Notes';
 const AppRoutes = () =>
     <App>
         <Switch>

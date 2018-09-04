@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import '../styles/NoteForm.css';
+import '../../styles/NoteForm.css';
 
 class NoteForm extends Component {
     constructor(props) {

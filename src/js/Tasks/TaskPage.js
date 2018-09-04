@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 // import logo from '../../';
-import logo from '../logo.svg';
+import logo from '../../logo.svg';
 
-import '../styles/TaskPage.css';
-import firebase from '../config/firebase';
+import '../../styles/TaskPage.css';
 
 import Task from './Task';
 
 import TodoForm from './TodoForm';
-import { todos } from '../todos.json';
+import { todos } from '../../todos.json';
 class TaskPage extends Component {
 
 
